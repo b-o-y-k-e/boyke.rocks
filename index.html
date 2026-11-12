@@ -96,14 +96,23 @@
     <p class="loc">duketown gmt+1</p>
 
     <nav class="links" aria-label="Links">
-      <a href="https://github.com/b-o-y-k-e" rel="noopener">GitHub</a>
-      <a href="https://discord.com/users/1231964266748317758" rel="noopener">Discord</a>
-      <a href="mailto:juanfarquaad@protonmail.ch">Email</a>
+      <a href="https://github.com/b-o-y-k-e" rel="noopener">github</a>
+      <a href="https://discord.com/users/1231964266748317758" rel="noopener">discord</a>
+      <a href="mailto:juanfarquaad@protonmail.ch">email</a>
     </nav>
   </main>
 
 <audio id="bgm" src="LEGOSHI.mp3" loop></audio>
 <script>
+  const audio = document.getElementById('bgm');
+  audio.volume = 0.3;
+
+  const DELAY = 500; // milliseconds
+
+  function startMusic() {
+    setTimeout(() => audio.play(), DELAY);
+  }
+  
   const audio = document.getElementById('bgm');
   audio.volume = 0.3;
   audio.play().catch(() => {
@@ -114,7 +123,7 @@
     };
     addEventListener('pointerdown', start);
     addEventListener('keydown', start);
-  });
+  }, DELAY);
 </script>
 
   
