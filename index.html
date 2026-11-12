@@ -102,11 +102,20 @@
     </nav>
   </main>
 
-  <audio id="bgm" src="LEGOSHI.mp3" loop></audio>
-  <script>
+<audio id="bgm" src="song.mp3" loop></audio>
+<script>
   const audio = document.getElementById('bgm');
-  audio.volume = 0.3; // 30% volume
-  </script>
+  audio.volume = 0.3;
+  audio.play().catch(() => {
+    const start = () => {
+      audio.play();
+      removeEventListener('pointerdown', start);
+      removeEventListener('keydown', start);
+    };
+    addEventListener('pointerdown', start);
+    addEventListener('keydown', start);
+  });
+</script>
 
   
   <script>
